@@ -1,7 +1,7 @@
-import sys
+import fileinput
 
-from ob2lx.ob2lx import fib
+from ob2lx.ob2lx import convert_l2o
 
 if __name__ == "__main__":
-    n = int(sys.argv[1])
-    print(fib(n))
+    for line in fileinput.input(inplace=True):
+        print(convert_l2o(line), end="")
